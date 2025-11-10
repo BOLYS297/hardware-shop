@@ -21,8 +21,7 @@ Route::middleware(['auth', 'role:client'])->group(function () {
     // Dashboard et profil utilisateur
     Route::get('/dashboard', [UserController::class, 'index'])->name('client.dashboard');
     Route::get('/profile', [UserController::class, 'showProfile'])->name('client.profile');
-    Route::get('/mes-commandes', [UserController::class, 'commandes'])->name('client.commandes');
-
+    
     // Gestion du compte
     Route::get('/client/compte', [CompteController::class, 'profil'])->name('client.compte');
     Route::put('/client/compte', [CompteController::class, 'update'])->name('client.compte.update');
